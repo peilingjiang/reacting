@@ -1,1 +1,1 @@
-# reacting
+# React + Vite + TypeScript + Biome + Prettier

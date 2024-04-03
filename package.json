@@ -1,0 +1,38 @@
+{
+  "name": "reacting",
+  "private": true,
+  "version": "0.1.0",
+  "author": "Anonymous Programmer",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "format": "biome format --write . && prettier --write \"**/*.scss\"",
+    "lint": "biome check --apply .",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.6.3",
+    "@types/node": "^20.12.3",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.23",
+    "@vitejs/plugin-react-swc": "^3.6.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "sass": "^1.72.0",
+    "typescript": "^5.4.3",
+    "vite": "^5.2.7"
+  },
+  "description": "React + Vite + TypeScript + Biome + Prettier",
+  "license": "MIT",
+  "lint-staged": {
+    "*.{ts,tsx,json,md,html}": ["biome check --apply --no-errors-on-unmatched"],
+    "*.scss": "prettier --write"
+  }
+}
