@@ -2,7 +2,8 @@ name: Monthly Dependency Check and Update
 
 on:
   schedule:
-    - cron: "0 0 1 * *" # runs at midnight on the first day of every month
+    - cron: "0 0 1 * *" # Runs at midnight on the first day of every month
+  workflow_dispatch:
 
 jobs:
   update-dependencies:
@@ -12,15 +13,27 @@ jobs:
       - name: Check out
         uses: actions/checkout@v4
 
+      - name: Check for open Pull Requests
+        id: check-prs
+        run: |
+          prs=$(curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+               "https://api.github.com/repos/${{ github.repository }}/pulls?state=open")
+          if [[ -n "$prs" && "$prs" != "[]" ]]; then
+            echo "open_prs=true" >> $GITHUB_ENV
+          fi
+
       - name: Setup bun
+        if: env.open_prs != 'true'
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: "latest"
 
       - name: Install npm-check-updates
+        if: env.open_prs != 'true'
         run: bun install npm-check-updates
 
       - name: Check for dependency updates
+        if: env.open_prs != 'true'
         id: ncu
         run: |
           updates=$(ncu -u)
@@ -30,11 +43,11 @@ jobs:
           fi
 
       - name: Install updated dependencies with bun
-        if: env.updates_available == 'true'
+        if: env.open_prs != 'true' && env.updates_available == 'true'
         run: bun install
 
       - name: Create Pull Request
-        if: env.updates_available == 'true'
+        if: env.open_prs != 'true' && env.updates_available == 'true'
         uses: peter-evans/create-pull-request@v3
         with:
           commit-message: update dependencies
