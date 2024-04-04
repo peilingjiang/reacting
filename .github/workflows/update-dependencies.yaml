@@ -40,7 +40,9 @@ jobs:
         run: |
           updates=$(ncu -u)
           if [[ -n "$updates" ]]; then
-            echo "updates=$updates" >> $GITHUB_ENV
+            echo "updates<<EOF" >> $GITHUB_ENV
+            echo "$updates" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
             echo "updates_available=true" >> $GITHUB_ENV
           fi
 
