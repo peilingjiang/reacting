@@ -6,11 +6,15 @@
   "author": "",
   "description": "",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peilingjiang/reacting.git"
+  },
   "scripts": {
     "start": "bunx --bun vite",
     "build": "bunx --bun vite build",
     "preview": "bunx --bun vite preview",
-    "format": "biome format --write . && prettier --write \"**/*.scss\"",
+    "format": "biome format --write . && prettier --write \"**/*.{scss,md,html}\"",
     "lint": "biome check --apply .",
     "prepare": "husky"
   },
@@ -33,7 +37,7 @@
     "vite": "^5.2.8"
   },
   "lint-staged": {
-    "*.{ts,tsx,json,md,html}": ["biome check --apply --no-errors-on-unmatched"],
-    "*.scss": "prettier --write"
+    "*.{ts,tsx,json}": ["biome check --apply --no-errors-on-unmatched"],
+    "*.{scss,md,html}": "prettier --write"
   }
 }
