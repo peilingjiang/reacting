@@ -2,12 +2,14 @@
   "name": "reacting",
   "private": true,
   "version": "0.1.0",
-  "author": "Anonymous Programmer",
+  "license": "MIT",
+  "author": "",
+  "description": "",
   "type": "module",
   "scripts": {
-    "start": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "start": "bunx --bun vite",
+    "build": "bunx --bun vite build",
+    "preview": "bunx --bun vite preview",
     "format": "biome format --write . && prettier --write \"**/*.scss\"",
     "lint": "biome check --apply .",
     "prepare": "husky"
@@ -30,8 +32,6 @@
     "typescript": "^5.4.3",
     "vite": "^5.2.8"
   },
-  "description": "React + Vite + TypeScript + Biome + Prettier",
-  "license": "MIT",
   "lint-staged": {
     "*.{ts,tsx,json,md,html}": ["biome check --apply --no-errors-on-unmatched"],
     "*.scss": "prettier --write"
