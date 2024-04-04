@@ -32,7 +32,7 @@ jobs:
 
       - name: Install npm-check-updates
         if: env.open_prs != 'true'
-        run: bun install npm-check-updates
+        run: bun install --global npm-check-updates
 
       - name: Check for dependency updates
         if: env.open_prs != 'true'
