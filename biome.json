@@ -20,7 +20,7 @@
         "useArrowFunction": "off"
       },
       "correctness": {
-        "useExhaustiveDependencies": "off",
+        "useExhaustiveDependencies": "warn",
         "noUnusedImports": "warn"
       },
       "style": {
