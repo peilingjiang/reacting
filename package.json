@@ -21,22 +21,22 @@
   "dependencies": {
     "@goodjpl/styling": "^0.8.0",
     "modern-normalize": "^3.0.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@tailwindcss/vite": "^4.0.7",
-    "@types/node": "^22.13.4",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react-swc": "^3.8.0",
+    "@tailwindcss/vite": "^4.1.8",
+    "@types/node": "^22.15.29",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "@vitejs/plugin-react-swc": "^3.10.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.3",
-    "prettier": "^3.5.1",
-    "sass": "^1.85.0",
-    "tailwindcss": "^4.0.7",
-    "typescript": "^5.7.3",
+    "lint-staged": "^16.1.0",
+    "prettier": "^3.5.3",
+    "sass": "^1.89.1",
+    "tailwindcss": "^4.1.8",
+    "typescript": "^5.8.3",
     "vite": "6"
   },
   "lint-staged": {
