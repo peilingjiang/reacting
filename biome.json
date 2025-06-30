@@ -1,15 +1,12 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
   "formatter": {
     "enabled": true,
-    "ignore": ["node_modules", "dist", "build"]
+    "includes": ["!node_modules", "!dist", "!build"]
   },
   "linter": {
     "enabled": true,
-    "ignore": ["node_modules", "dist", "build"],
+    "includes": ["!node_modules", "!dist", "!build"],
     "rules": {
       "a11y": {
         "useKeyWithClickEvents": "off",
@@ -28,6 +25,15 @@
         "useImportType": "warn"
       },
       "recommended": true
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": "on",
+        "useSortedProperties": "on"
+      }
     }
   },
   "javascript": {
