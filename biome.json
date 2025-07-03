@@ -1,12 +1,21 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "files": {
+    "includes": [
+      "**/*.{ts,tsx,js,jsx,json,css,scss}",
+      "!node_modules",
+      "!dist",
+      "!build"
+    ]
+  },
   "formatter": {
-    "enabled": true,
-    "includes": ["!node_modules", "!dist", "!build"]
+    "enabled": true
   },
   "linter": {
     "enabled": true,
-    "includes": ["!node_modules", "!dist", "!build"],
+    "domains": {
+      "react": "recommended"
+    },
     "rules": {
       "a11y": {
         "useKeyWithClickEvents": "off",
@@ -41,6 +50,11 @@
       "indentStyle": "space",
       "semicolons": "asNeeded",
       "quoteStyle": "single"
+    }
+  },
+  "css": {
+    "formatter": {
+      "indentStyle": "space"
     }
   },
   "json": {
