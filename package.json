@@ -21,23 +21,23 @@
   "dependencies": {
     "@goodjpl/styling": "^0.8.0",
     "modern-normalize": "^3.0.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.1.2",
-    "@tailwindcss/vite": "^4.1.11",
-    "@types/node": "^24.1.0",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "@vitejs/plugin-react-swc": "^3.11.0",
+    "@biomejs/biome": "^2.2.7",
+    "@tailwindcss/vite": "^4.1.16",
+    "@types/node": "^24.9.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react-swc": "^4.1.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.1.2",
+    "lint-staged": "^16.2.6",
     "prettier": "^3.6.2",
-    "sass": "^1.89.2",
-    "tailwindcss": "^4.1.11",
-    "typescript": "^5.8.3",
-    "vite": "7"
+    "sass": "^1.93.2",
+    "tailwindcss": "^4.1.16",
+    "typescript": "^5.9.3",
+    "vite": "7.1.12"
   },
   "lint-staged": {
     "*.{ts,tsx,json}": [
